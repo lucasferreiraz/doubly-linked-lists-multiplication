@@ -2,20 +2,20 @@ package structures;
 
 public class Node {
     
-    private Integer content;
+    private Long content;
 
     private Node previous;
     private Node next;
     
-    public Node(Integer content) {
+    public Node(Long content) {
         this.content = content;
     }
 
-    public Integer getContent() {
+    public Long getContent() {
         return content;
     }
 
-    public void setContent(Integer content) {
+    public void setContent(Long content) {
         this.content = content;
     }
 
