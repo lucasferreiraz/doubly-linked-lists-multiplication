@@ -9,7 +9,7 @@ public class DoublyLinkedList {
 
     public DoublyLinkedList() { }
 
-    public void addLast(Integer num){
+    public void addLast(Long num){
         Node newNode = new Node(num);
         newNode.setNext(null);
         newNode.setPrevious(lastNode);
@@ -25,7 +25,7 @@ public class DoublyLinkedList {
         size++;
     }
 
-    public void add(Integer index, Integer num){
+    public void add(Integer index, Long num){
         Node newNode = new Node(num);
 
         Node auxiliar = getNode(index);
@@ -72,7 +72,15 @@ public class DoublyLinkedList {
         return this.size;
     }
 
-    private Node getNode(int index){
+    public Long getFirstNode() {
+        return firstNode.getContent();
+    }
+
+    public Long getLastNode() {
+        return lastNode.getContent();
+    }
+
+    public Node getNode(int index){
         Node auxiliar = firstNode;
         for(int i = 0; i<index && auxiliar!=null; i++){
             auxiliar = auxiliar.getNext();
@@ -87,7 +95,7 @@ public class DoublyLinkedList {
         Node auxiliar = firstNode;
 
         for(int i = 0; i<getSize(); i++){
-            build += "[Node=" + auxiliar.getContent().toString() + "]<--->";
+            build += "[" + auxiliar.getContent().toString() + "] \u21D4 ";
             auxiliar = auxiliar.getNext();
         }
         build += "null";
